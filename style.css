@@ -1,0 +1,205 @@
+/*  FONTS ------------------------ */
+/* red-hat-display-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/red-hat-display-v21-latin-500.woff2") format("woff2");
+}
+/* red-hat-display-900italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./assets/fonts/red-hat-display-v21-latin-900.woff2") format("woff2");
+}
+
+/*  RESET ------------------------ */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+}
+
+button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+/*  VARIABLES -------------------- */
+:root {
+  /* colors */
+  --clr-cyan-600: hsl(192, 37%, 48%);
+  --clr-cyan-400: hsl(192, 54%, 64%);
+  --clr-cyan-300: hsl(192, 90%, 77%);
+  --clr-purple-600: hsl(268, 34%, 53%);
+  --clr-purple-400: hsl(268, 55%, 71%);
+  --clr-purple-300: hsl(268, 100%, 86%);
+  --clr-slate-900: hsl(240, 21%, 20%);
+  --clr-slate-600: hsl(240, 10%, 57%);
+  --clr-slate-300: hsl(240, 18%, 85%);
+  --clr-white: hsl(0, 0%, 98%);
+
+  /* buttons */
+  --btn-purple: var(--clr-purple-600);
+  --btn-cyan: var(--clr-cyan-600);
+  /* buttons actif */
+  --btn-purple-hover: var(--clr-purple-400);
+  --btn-cyan-hover: var(--clr-cyan-400);
+
+  /* font size */
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-32: 2rem;
+  --fs-36: 2.25rem;
+  --fs-40: 2.5rem;
+  --fs-48: 3rem;
+  --fs-64: 4rem;
+
+  /* fonts weight */
+  --fw-medium: 500;
+  --fw-black: 900;
+
+  /* line height */
+  --lh-110: 110%;
+  --lh-150: 150%;
+
+  /* letter space */
+  --ls-4: 4px;
+
+  /* Size image hero section */
+  --size-img-hero: min(100%, 10rem);
+}
+
+/*  GENERAL ---------------------- */
+.wrapper {
+  /* width: min(calc(100% - 48px), calc(1120 / 16 * 1rem)); */
+  width: min(100%, 70rem);
+  margin-inline: auto;
+}
+
+body {
+  font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
+  font-weight: var(--fw-medium);
+  line-height: 1.1;
+}
+
+/* NAV */
+.nav {
+  height: 76px;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/* HERO */
+.hero {
+  padding-block: 4rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 10rem;
+  justify-content: center;
+  row-gap: 3rem;
+  column-gap: 1.0625rem;
+  grid-template-areas:
+    "area-left   area-right"
+    "area-middle area-middle";
+}
+
+.hero__img-left,
+.hero__img-right {
+  height: var(--size-img-hero);
+}
+
+.hero__img-left {
+  grid-area: area-left;
+}
+.hero__img-right {
+  justify-self: end;
+  grid-area: area-right;
+}
+
+.hero__text {
+  grid-area: area-middle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  gap: 24px;
+
+  text-align: center;
+  max-width: 19.0625rem;
+}
+.hero__title {
+  font-size: var(--fs-40);
+  font-weight: var(--fw-black);
+  color: var(--clr-slate-900);
+}
+.hero__description {
+  font-size: var(--fs-16);
+  line-height: 1.5;
+  color: var(--clr-slate-600);
+}
+
+.hero__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.hero__btn-1,
+.hero__btn-2 {
+  font-size: var(--fs-16);
+  line-height: 1.5;
+  padding: 16px 40px;
+  border-radius: 28px;
+  width: fit-content;
+  color: var(--clr-white);
+  transition: background-color 300ms ease-in-out;
+}
+.hero__btn-1 {
+  background-color: var(--btn-cyan);
+}
+.hero__btn-1 span {
+  color: var(--clr-cyan-300);
+}
+.hero__btn-1:hover {
+  background-color: var(--btn-cyan-hover);
+}
+.hero__btn-2 {
+  background-color: var(--btn-purple);
+}
+.hero__btn-2:hover {
+  background-color: var(--btn-purple-hover);
+  color: var(--clr-white);
+}
+
+/*  RESPONSIBLE ---------------------- */
+@media (min-width: 768px) {
+  :root {
+    --size-img-hero: 303px;
+  }
+}
+
+@media (min-width: 1440px) {
+}
