@@ -91,12 +91,12 @@ button {
 
 /*  GENERAL ---------------------- */
 .wrapper {
-  /* width: min(calc(100% - 48px), calc(1120 / 16 * 1rem)); */
   width: min(100%, 70rem);
   margin-inline: auto;
 }
 
 body {
+  /* width: min(calc(100% - 48px), calc(1440 / 16 * 1rem)); */
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
   font-weight: var(--fw-medium);
   line-height: 1.1;
@@ -105,8 +105,6 @@ body {
 
 /* NAV */
 .nav {
-  border: 1px solid red;
-
   height: 4.75rem;
 
   display: flex;
@@ -116,7 +114,6 @@ body {
 
 /* HERO */
 .hero {
-  border: 1px solid red;
   padding: 4rem 2rem 2rem;
 
   display: grid;
@@ -201,7 +198,7 @@ body {
   color: var(--clr-white);
 }
 
-/* Service */
+/* SERVICE */
 .service {
   padding: 2rem 2rem 4rem 2rem;
   display: flex;
@@ -224,6 +221,7 @@ body {
 .service__number {
   position: relative;
   font-size: var(--fs-16);
+  font-weight: var(--fw-black);
   background-color: var(--clr-white);
   color: var(--clr-slate-600);
   border: 1px solid var(--clr-slate-300);
@@ -244,7 +242,9 @@ body {
   gap: 1rem;
 }
 .service__img img {
-  max-width: 9.21875rem;
+  width: 9.21875rem;
+  height: 9rem;
+
   border-radius: 0.5rem;
 }
 .service__text {
@@ -301,6 +301,21 @@ body {
     flex-direction: row;
     gap: 1.0625rem;
   }
+
+  /* Service */
+  .service__img {
+    gap: 1.5rem;
+  }
+  .service__img img {
+    width: 9.5rem;
+    height: 10rem;
+  }
+  .service__subtitle {
+    font-size: var(--fs-14);
+  }
+  .service__title {
+    font-size: var(--fs-36);
+  }
 }
 
 /* Desktop */
@@ -335,5 +350,29 @@ body {
   }
   .hero__btn {
     gap: 1.0625rem;
+  }
+
+  /* Service */
+  .service {
+    padding-block: 56px 72px;
+    padding-inline: 0;
+  }
+
+  .service__img {
+    gap: 2rem;
+  }
+  .service__img img {
+    width: 16rem;
+    height: 16rem;
+  }
+  .service__subtitle {
+    font-size: var(--fs-16);
+  }
+  .service__title {
+    font-size: var(--fs-40);
+  }
+  .service__description {
+    font-size: var(--fs-18);
+    max-width: 34rem;
   }
 }
