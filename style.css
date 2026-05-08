@@ -89,6 +89,37 @@ button {
   --size-img-hero: 10rem;
 }
 
+/* COMPONENTS ---------------------- */
+/* number */
+.digit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .line {
+    width: 1px;
+    height: 80px;
+    background-color: var(--clr-slate-300);
+  }
+
+  .number {
+    font-size: var(--fs-16);
+    font-weight: var(--fw-black);
+    background-color: var(--clr-white);
+    color: var(--clr-slate-600);
+    border: 1px solid var(--clr-slate-300);
+    border-radius: 100%;
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* button */
+
 /*  GENERAL ---------------------- */
 .wrapper {
   width: min(100%, 70rem);
@@ -118,8 +149,7 @@ body {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-auto-rows: var(--size-img-hero); */
-  grid-template-rows: var(--size-img-hero) 22.5rem;
+  grid-template-rows: var(--size-img-hero) auto;
   justify-content: center;
   row-gap: 3rem;
   column-gap: 1.0625rem;
@@ -171,8 +201,7 @@ body {
   align-items: center;
   gap: 1rem;
 }
-.hero__btn-1,
-.hero__btn-2 {
+.btn {
   font-size: var(--fs-16);
   line-height: 1.5;
   padding: 1rem 2.5rem;
@@ -276,6 +305,59 @@ body {
   max-width: 31.25rem;
 }
 
+/* FOOTER */
+/* footer {
+  outline: 2px solid red;
+  max-height: calc(max(100%) - 1.75rem);
+} */
+.footer__digit {
+  transform: translateY(28px);
+  margin-top: -28px;
+}
+.footer__bg {
+  width: 100%;
+  background-image:
+    linear-gradient(hsla(192, 37%, 48%, 0.9), hsla(192, 37%, 48%, 0.9)),
+    url("./assets/desktop/image-footer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__text {
+  padding: 4rem 2rem;
+  color: var(--clr-white);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__title {
+  font-size: var(--fs-32);
+  font-weight: var(--fw-black);
+}
+.footer__description {
+  font-size: var(--fs-16);
+  line-height: 1.5;
+}
+.footer__btn {
+  background-color: var(--clr-purple-600);
+}
+.footer__btn span {
+  color: var(--clr-purple-300);
+  font-weight: var(--fw-black);
+}
+.footer__btn:hover {
+  background-color: var(--btn-purple-hover);
+  color: var(--clr-white);
+}
+
 /*  RESPONSIBLE ---------------------- */
 
 /* Tablet */
@@ -314,6 +396,14 @@ body {
     font-size: var(--fs-14);
   }
   .service__title {
+    font-size: var(--fs-36);
+  }
+
+  /* FOOTER */
+  .footer__text {
+    max-width: 560px;
+  }
+  .footer__title {
     font-size: var(--fs-36);
   }
 }
@@ -374,5 +464,28 @@ body {
   .service__description {
     font-size: var(--fs-18);
     max-width: 34rem;
+  }
+
+  /* FOOTER */
+  .footer__bg {
+    height: 312px;
+  }
+  .footer__text {
+    text-align: left;
+    max-width: 70rem;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  .footer__title {
+    font-size: var(--fs-40);
+  }
+  .footer__description {
+    text-align: left;
+    flex: 1 2 auto;
+  }
+  .footer__btn {
+    flex: 0 0 auto;
+    align-self: flex-start;
   }
 }
