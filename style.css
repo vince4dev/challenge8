@@ -354,6 +354,7 @@ body {
 /* Tablet */
 @media (min-width: 768px) {
   :root {
+    /* Modification de la taille: hero__img-left et hero__img-right */
     --size-img-hero: 18.9375rem;
   }
   /* hero */
