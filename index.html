@@ -17,16 +17,15 @@
   </head>
 
   <body>
-    <header class="wrapper">
+    <!-- ACCESSIBILITY -->
+    <a href="#header" class="skip-link">Skip to header content</a>
+    <!-- HEADER -->
+    <header id="header" class="wrapper">
+      <!-- NAV -->
       <nav class="nav">
-        <img
-          class="nav__logo"
-          src="./assets/logo.svg"
-          alt="logo meet"
-          width="119"
-          height="28"
-        />
+        <img src="./assets/logo.svg" alt="logo meet" width="119" height="28" />
       </nav>
+      <!-- HERO -->
       <div class="hero">
         <img
           class="hero__img-left"
@@ -51,8 +50,8 @@
           </p>
 
           <div class="hero__btn">
-            <button class="hero__btn-1 btn">Download <span>v1.3</span></button>
-            <button class="hero__btn-2 btn">What is it?</button>
+            <button class="hero__btn-d btn">Download <span>v1.3</span></button>
+            <button class="hero__btn-w btn">What is it?</button>
           </div>
         </div>
       </div>
@@ -60,8 +59,9 @@
     <main class="wrapper">
       <section class="wrapper">
         <div class="service">
-          <div class="service__number-wrapper">
-            <div class="service__number">
+          <div class="digit">
+            <div class="digit__line"></div>
+            <div class="digit__number">
               <p>01</p>
             </div>
           </div>
@@ -97,9 +97,9 @@
     </main>
     <footer>
       <section class="footer">
-        <div class="footer__digit digit">
-          <div class="line"></div>
-          <div class="number">
+        <div class="digit footer__digit">
+          <div class="digit__line"></div>
+          <div class="digit__number">
             <p>02</p>
           </div>
         </div>

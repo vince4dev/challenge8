@@ -56,13 +56,6 @@ button {
   --clr-slate-300: hsl(240, 18%, 85%);
   --clr-white: hsl(0, 0%, 98%);
 
-  /* buttons */
-  --btn-purple: var(--clr-purple-600);
-  --btn-cyan: var(--clr-cyan-600);
-  /* buttons actif */
-  --btn-purple-hover: var(--clr-purple-400);
-  --btn-cyan-hover: var(--clr-cyan-400);
-
   /* font size */
   --fs-12: 0.75rem;
   --fs-14: 0.875rem;
@@ -90,35 +83,74 @@ button {
 }
 
 /* COMPONENTS ---------------------- */
-/* number */
+/* digit number */
 .digit {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.digit__line {
+  width: 1px;
+  height: 80px;
+  background-color: var(--clr-slate-300);
+}
+.digit__number {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-black);
+  background-color: var(--clr-white);
+  color: var(--clr-slate-600);
+  border: 1px solid var(--clr-slate-300);
+  border-radius: 100%;
+  width: 56px;
+  height: 56px;
 
-  .line {
-    width: 1px;
-    height: 80px;
-    background-color: var(--clr-slate-300);
-  }
-
-  .number {
-    font-size: var(--fs-16);
-    font-weight: var(--fw-black);
-    background-color: var(--clr-white);
-    color: var(--clr-slate-600);
-    border: 1px solid var(--clr-slate-300);
-    border-radius: 100%;
-    width: 56px;
-    height: 56px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* button */
+.btn {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-black);
+  line-height: 1.5;
+  padding: 1rem 2.5rem;
+  border-radius: 1.75rem;
+  width: fit-content;
+  color: var(--clr-white);
+  background-color: var(--btn-bg);
+  transition: background-color 300ms ease-in-out;
+}
+.btn span {
+  color: var(--span-clr);
+}
+.btn:hover {
+  background-color: var(--btn-hover);
+}
+.btn:focus-visible {
+  outline: 3px solid black;
+  box-shadow: 6px 10px 6px black;
+  color: black;
+}
+
+/* SKIP LINK ---------------------------------- */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 6px;
+  background-color: var(--clr-purple-600);
+  outline: 3px solid black;
+  box-shadow: 6px 10px 6px black;
+  color: black;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 6px;
+}
 
 /*  GENERAL ---------------------- */
 .wrapper {
@@ -127,7 +159,6 @@ button {
 }
 
 body {
-  /* width: min(calc(100% - 48px), calc(1440 / 16 * 1rem)); */
   font-family: "Red Hat Display", Arial, Helvetica, sans-serif;
   font-weight: var(--fw-medium);
   line-height: 1.1;
@@ -173,15 +204,16 @@ body {
 
 .hero__text {
   grid-area: area-middle;
+  text-align: center;
+  max-width: 19.0625rem;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-self: center;
   gap: 1.5rem;
-
-  text-align: center;
-  max-width: 19.0625rem;
 }
+
 /* title */
 .hero__title {
   font-size: var(--fs-40);
@@ -191,8 +223,8 @@ body {
 /* description */
 .hero__description {
   font-size: var(--fs-16);
-  line-height: 1.5;
   color: var(--clr-slate-600);
+  line-height: 1.5;
 }
 /* buttons */
 .hero__btn {
@@ -201,66 +233,30 @@ body {
   align-items: center;
   gap: 1rem;
 }
-.btn {
-  font-size: var(--fs-16);
-  line-height: 1.5;
-  padding: 1rem 2.5rem;
-  border-radius: 1.75rem;
-  width: fit-content;
-  color: var(--clr-white);
-  transition: background-color 300ms ease-in-out;
+/* button Downlaod */
+.hero__btn-d {
+  --btn-bg: var(--clr-cyan-600);
 }
-.hero__btn-1 {
-  background-color: var(--btn-cyan);
+.hero__btn-d span {
+  --span-clr: var(--clr-cyan-300);
 }
-.hero__btn-1 span {
-  color: var(--clr-cyan-300);
+.hero__btn-d:hover {
+  --btn-hover: var(--clr-cyan-400);
 }
-.hero__btn-1:hover {
-  background-color: var(--btn-cyan-hover);
+/* button What is it? */
+.hero__btn-w {
+  --btn-bg: var(--clr-purple-600);
 }
-.hero__btn-2 {
-  background-color: var(--btn-purple);
-}
-.hero__btn-2:hover {
-  background-color: var(--btn-purple-hover);
-  color: var(--clr-white);
+.hero__btn-w:hover {
+  --btn-hover: var(--clr-purple-400);
 }
 
 /* SERVICE */
 .service {
   padding: 2rem 2rem 4rem 2rem;
-  display: flex;
 
+  display: flex;
   flex-direction: column;
-}
-.service__number-wrapper {
-  padding-top: 80px;
-  display: flex;
-  justify-content: center;
-}
-.service__number::before {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 80px;
-  background-color: var(--clr-slate-300);
-  top: -80px;
-}
-.service__number {
-  position: relative;
-  font-size: var(--fs-16);
-  font-weight: var(--fw-black);
-  background-color: var(--clr-white);
-  color: var(--clr-slate-600);
-  border: 1px solid var(--clr-slate-300);
-  border-radius: 100%;
-  width: 56px;
-  height: 56px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .service__img {
   padding-block: 4rem;
@@ -273,13 +269,12 @@ body {
 .service__img img {
   width: 9.21875rem;
   height: 9rem;
-
   border-radius: 0.5rem;
 }
 .service__text {
   font-size: var(--fs-16);
-  line-height: 1.5;
   color: var(--clr-slate-600);
+  line-height: 1.5;
   text-align: center;
 
   display: flex;
@@ -310,6 +305,7 @@ body {
   transform: translateY(1.75rem);
   margin-top: -1.75rem;
 }
+/* background image */
 .footer__bg {
   width: 100%;
   background-image:
@@ -333,7 +329,7 @@ body {
   align-items: center;
   gap: 1.5rem;
 }
-
+/* title */
 .footer__title {
   font-size: var(--fs-32);
   font-weight: var(--fw-black);
@@ -342,16 +338,15 @@ body {
   font-size: var(--fs-16);
   line-height: 1.5;
 }
+/* button Download */
 .footer__btn {
-  background-color: var(--clr-purple-600);
+  --btn-bg: var(--clr-purple-600);
 }
 .footer__btn span {
-  color: var(--clr-purple-300);
-  font-weight: var(--fw-black);
+  --span-clr: var(--clr-purple-300);
 }
 .footer__btn:hover {
-  background-color: var(--btn-purple-hover);
-  color: var(--clr-white);
+  --btn-hover: var(--clr-purple-400);
 }
 
 /*  RESPONSIBLE ---------------------- */
@@ -364,7 +359,6 @@ body {
   /* hero */
   .hero {
     padding: 4rem 2rem;
-
     row-gap: 4.5rem;
     column-gap: 2rem;
   }
@@ -406,9 +400,6 @@ body {
 
 /* Desktop */
 @media (min-width: 1440px) {
-  :root {
-    /* --size-img-hero: 18.9375rem; */
-  }
   /* hero */
   .hero {
     column-gap: 2rem;
@@ -443,7 +434,6 @@ body {
     padding-block: 3.5rem 4.5rem;
     padding-inline: 0;
   }
-
   .service__img {
     gap: 2rem;
   }
